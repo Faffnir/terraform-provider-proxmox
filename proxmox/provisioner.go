@@ -3,7 +3,7 @@ package proxmox
 import (
 	"context"
 	"fmt"
-	pxapi "github.com/Telmate/proxmox-api-go/proxmox"
+	pxapi "github.com/Faffnir/proxmox-api-go/proxmox"
 	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/hashicorp/terraform/terraform"
 	"time"
@@ -12,11 +12,11 @@ import (
 func Provisioner() terraform.ResourceProvisioner {
 	return &schema.Provisioner{
 		Schema: map[string]*schema.Schema{
-			"action": &schema.Schema{
+			"action": {
 				Type:     schema.TypeString,
 				Required: true,
 			},
-			"net1": &schema.Schema{
+			"net1": {
 				Type:     schema.TypeString,
 				Optional: true,
 			},
