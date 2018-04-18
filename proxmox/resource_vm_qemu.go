@@ -79,6 +79,10 @@ func resourceVmQemu() *schema.Resource {
 				Type:     schema.TypeString,
 				Required: true,
 			},
+			"mac": {
+				Type:     schema.TypeString,
+				Required: true,
+			},
 			"bridge": {
 				Type:     schema.TypeString,
 				Required: true,
@@ -138,6 +142,7 @@ func resourceVmQemuCreate(d *schema.ResourceData, meta interface{}) error {
 		DiskSize:     disk_gb,
 		QemuOs:       d.Get("qemu_os").(string),
 		QemuNicModel: d.Get("nic").(string),
+		QemuMacAddr:  d.Get("mac").(string),
 		QemuBrige:    d.Get("bridge").(string),
 		QemuVlanTag:  d.Get("vlan").(int),
 	}
@@ -296,6 +301,7 @@ func resourceVmQemuUpdate(d *schema.ResourceData, meta interface{}) error {
 		DiskSize:     disk_gb,
 		QemuOs:       d.Get("qemu_os").(string),
 		QemuNicModel: d.Get("nic").(string),
+		QemuMacAddr:  d.Get("mac").(string),
 		QemuBrige:    d.Get("bridge").(string),
 		QemuVlanTag:  d.Get("vlan").(int),
 	}
@@ -365,6 +371,7 @@ func resourceVmQemuRead(d *schema.ResourceData, meta interface{}) error {
 	d.Set("disk_gb", config.DiskSize)
 	d.Set("qemu_os", config.QemuOs)
 	d.Set("nic", config.QemuNicModel)
+	d.Set("mac", config.QemuMacAddr)
 	d.Set("bridge", config.QemuBrige)
 	d.Set("vlan", config.QemuVlanTag)
 	pmParallelEnd(pconf)
