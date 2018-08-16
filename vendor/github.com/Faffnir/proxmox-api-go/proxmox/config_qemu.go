@@ -103,6 +103,7 @@ func (config ConfigQemu) UpdateConfig(vmr *VmRef, client *Client) (err error) {
 		"cores":       strconv.Itoa(config.QemuCores),
 		"memory":      strconv.Itoa(config.Memory),
 		"net0":        network,
+		"cpu":         "host",
 		"description": config.Description,
 	}
 	_, err = client.SetVmConfig(vmr, configParams)

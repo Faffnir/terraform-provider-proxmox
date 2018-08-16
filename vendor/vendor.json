@@ -108,10 +108,10 @@
 			"revisionTime": "2018-04-16T23:27:52Z"
 		},
 		{
-			"checksumSHA1": "xH1pUBgQIX+x9hRsLvNbktXN2XY=",
+			"checksumSHA1": "yq69iQ6IcqRV9SDru1N07rK0xys=",
 			"path": "github.com/Faffnir/proxmox-api-go/proxmox",
-			"revision": "58fca97cf02deba92b82c0640c6177ca1c15bcea",
-			"revisionTime": "2018-04-18T15:39:15Z"
+			"revision": "84366a14d1cc4383f3b750153e71d5b0954f7691",
+			"revisionTime": "2018-08-16T12:43:17Z"
 		},
 		{
 			"checksumSHA1": "jQh1fnoKPKMURvKkpdRjN695nAQ=",
